@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { Info } from 'lucide-react';
+import './SalaryCalculator.css';
 
 const SalaryCalculator = () => {
   const [role, setRole] = useState('');
