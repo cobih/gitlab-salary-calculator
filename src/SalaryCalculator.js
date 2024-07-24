@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Select, Card, CardHeader, CardContent, CardFooter, Button } from '@/components/ui/card';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { Info } from 'lucide-react';
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 
 const SalaryCalculator = () => {
   const [role, setRole] = useState('');
@@ -79,56 +77,56 @@ const SalaryCalculator = () => {
   };
 
   return (
-    <Card className="w-full max-w-4xl mx-auto">
-      <CardHeader>
+    <div className="card">
+      <div className="card-header">
         <h2 className="text-2xl font-bold">GitLab-inspired Salary Calculator</h2>
-      </CardHeader>
-      <CardContent>
+      </div>
+      <div className="card-content">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div>
             <label className="block mb-1">Role</label>
-            <Select value={role} onChange={(e) => setRole(e.target.value)}>
+            <select value={role} onChange={(e) => setRole(e.target.value)}>
               <option value="">Select Role</option>
               {Object.keys(sfBenchmarks).map((r) => (
                 <option key={r} value={r}>{r}</option>
               ))}
-            </Select>
+            </select>
           </div>
           <div>
             <label className="block mb-1">Level</label>
-            <Select value={level} onChange={(e) => setLevel(e.target.value)}>
+            <select value={level} onChange={(e) => setLevel(e.target.value)}>
               <option value="">Select Level</option>
               {Object.keys(levelFactors).map((l) => (
                 <option key={l} value={l}>{l}</option>
               ))}
-            </Select>
+            </select>
           </div>
           <div>
             <label className="block mb-1">Location</label>
-            <Select value={location} onChange={(e) => setLocation(e.target.value)}>
+            <select value={location} onChange={(e) => setLocation(e.target.value)}>
               <option value="">Select Location</option>
               {Object.keys(locationFactors).map((loc) => (
                 <option key={loc} value={loc}>{loc}</option>
               ))}
-            </Select>
+            </select>
           </div>
         </div>
-      </CardContent>
-      <CardFooter>
-        <Button onClick={calculateSalary} className="w-full">Calculate Salary</Button>
-      </CardFooter>
+      </div>
+      <div className="card-footer">
+        <button onClick={calculateSalary} className="w-full">Calculate Salary</button>
+      </div>
       {result && (
-        <CardContent>
+        <div className="card-content">
           <div className="mt-4 p-4 bg-gray-100 rounded-md">
             <h3 className="text-lg font-semibold mb-2">Calculated Salary:</h3>
             <p>Base Salary: ${result.baseSalary}</p>
             <p>Variable Compensation: ${result.variableComp}</p>
             <p className="font-bold">Total Salary: ${result.totalSalary}</p>
           </div>
-        </CardContent>
+        </div>
       )}
       {salaryHistory.length > 0 && (
-        <CardContent>
+        <div className="card-content">
           <h3 className="text-lg font-semibold mb-2">Salary History</h3>
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={salaryHistory}>
@@ -140,18 +138,18 @@ const SalaryCalculator = () => {
               <Line type="monotone" dataKey="totalSalary" stroke="#8884d8" />
             </LineChart>
           </ResponsiveContainer>
-        </CardContent>
+        </div>
       )}
-      <CardContent>
-        <Alert>
+      <div className="card-content">
+        <div className="alert">
           <Info className="h-4 w-4" />
-          <AlertTitle>Disclaimer</AlertTitle>
-          <AlertDescription>
+          <h4>Disclaimer</h4>
+          <p>
             This calculator provides estimates based on simplified data and should not be considered as official GitLab compensation information. For accurate and up-to-date compensation details, please refer to GitLab's official resources.
-          </AlertDescription>
-        </Alert>
-      </CardContent>
-    </Card>
+          </p>
+        </div>
+      </div>
+    </div>
   );
 };
 
