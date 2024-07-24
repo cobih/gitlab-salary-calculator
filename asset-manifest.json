@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/gitlab-salary-calculator/static/css/main.e6c13ad2.css",
+    "main.js": "/gitlab-salary-calculator/static/js/main.e5542324.js",
+    "static/js/453.ca2d1754.chunk.js": "/gitlab-salary-calculator/static/js/453.ca2d1754.chunk.js",
+    "index.html": "/gitlab-salary-calculator/index.html",
+    "main.e6c13ad2.css.map": "/gitlab-salary-calculator/static/css/main.e6c13ad2.css.map",
+    "main.e5542324.js.map": "/gitlab-salary-calculator/static/js/main.e5542324.js.map",
+    "453.ca2d1754.chunk.js.map": "/gitlab-salary-calculator/static/js/453.ca2d1754.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.e5542324.js"
+  ]
+}
